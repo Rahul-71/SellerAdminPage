@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+    <style>
+        tbody {
+            text-indent: 1cm;
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 class="text-center mt-3">Seller Admin Page</h2>
+
+    <div class="container-lg mt-5 text-center">
+        <form id='prodForm' action="#" onsubmit="saveProd(event)">
+            <div class="row">
+                <div class="col col-md-4 form-floating">
+                    <input type="number" class="form-control" name="price" id="amount" placeholder="Selling Price">
+                    <label for="amount" class="form-label"> Selling Price</label>
+                </div>
+                <div class="col col-md-4 form-floating">
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Product Name">
+                    <label for="name" class="form-label"> Product Name</label>
+                </div>
+                <div class="col col-md-4 form-floating">
+                    <select id="category" class="form-select">
+                        <option value="electronic">Electronic</option>
+                        <option value="food">Food</option>
+                        <option value="beauty">Skin Care</option>
+                        <option value="gym">Gym</option>
+                    </select>
+                    <label for="category" class="form-label"> Product category</label>
+                </div>
+            </div>
+            <button class="btn btn-success mt-3"> Save Product</button>
+        </form>
+    </div>
+    <hr>
+    <h3 class="text-center pt-4">Product Listing</h3>
+    <div class="container ml-5 p-3" id='productListBody'>
+        <div class="row">
+            <div class="col p-2">
+                <h4 class="font-monospace text-decoration-underline">Electronic</h4>
+                <table>
+                    <tbody id="electronicList"></tbody>
+                </table>
+            </div>
+            <div class="col p-2">
+                <h4 class="font-monospace text-decoration-underline">Food</h4>
+                <table>
+                    <tbody id="foodList"></tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col p-2">
+                <h4 class="font-monospace text-decoration-underline">Skin Care</h4>
+                <table>
+                    <tbody id="beautyList"></tbody>
+                </table>
+            </div>
+            <div class="col p-2">
+                <h4 class="font-monospace text-decoration-underline">Gym Products</h4>
+                <table>
+                    <tbody id="gymList"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+<script src="main-axios.js"></script>
+
+</html>
