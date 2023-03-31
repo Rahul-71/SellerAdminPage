@@ -18,13 +18,33 @@
             width: 25%;
             text-transform: capitalize;
         }
+
+        @keyframes animatedGradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        body {
+            background: linear-gradient(120deg, #ff6596, #60bef8, #d88cff);
+            background-size: 600% 600%;
+            animation: animatedGradient 15s infinite linear;
+        }
     </style>
 </head>
 
 <body>
     <h2 class="text-center mt-3">Seller Admin Page</h2>
 
-    <div class="container-lg mt-5 text-center">
+    <div class="container-lg mt-5 text-center bg-gradient">
         <form id='prodForm' action="#" onsubmit="saveProd(event)">
             <div class="row">
                 <div class="col col-md-4 form-floating">
